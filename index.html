@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daybook</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com https://apis.google.com https://www.gstatic.com; connect-src 'self' https://www.googleapis.com https://accounts.google.com https://content.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://accounts.google.com; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https:; frame-src https://accounts.google.com https://docs.google.com https://drive.google.com https://content.googleapis.com; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#7a5af8">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar"></aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <header id="topbar"></header>
+    <div id="banner" hidden></div>
+    <div id="view"></div>
+  </main>
+</div>
+<div id="toasts"></div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
