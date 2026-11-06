@@ -1,6 +1,6 @@
 {
-  "name": "Daybook 노트",
-  "short_name": "Daybook",
+  "name": "Excinote 노트",
+  "short_name": "Excinote",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
