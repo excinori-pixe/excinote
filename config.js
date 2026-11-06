@@ -5,5 +5,5 @@
 window.EXCINOTE_CONFIG = {
   googleClientId: '107998519173-36u2k45b1mbbknh7oo97i2dg3h48qaot.apps.googleusercontent.com',
   googleApiKey: '',
-  googleAppId: '',
+  googleAppId: '107998519173',
 };
