@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daybook 개인정보처리방침</title>
+<style>
+  :root { --bg:#fff; --text:#1c1a27; --muted:#6b6880; --accent:#6544e8; color-scheme: light; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#15141c; --text:#ecebf4; --muted:#9a97b0; --accent:#b3a1ff; color-scheme: dark; } }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:'Pretendard Variable',Pretendard,-apple-system,'Malgun Gothic',sans-serif; line-height:1.75; }
+  main { max-width:720px; margin:0 auto; padding:40px 20px 80px; }
+  h1 { font-size:26px; } h2 { font-size:18px; margin-top:32px; }
+  p, li { color:var(--text); } small { color:var(--muted); } a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+<h1>Daybook 개인정보처리방침</h1>
+<small>시행일: 2026년 11월 6일 [초안: 출시 전 운영자 정보와 함께 검토 필요]</small>
+
+<h2>1. 수집하는 정보</h2>
+<p>Daybook은 별도의 서버를 운영하지 않으며, 이용자의 노트 내용과 개인정보를 운영자가 수집하거나 보관하지 않습니다.</p>
+<ul>
+  <li>Google 계정 이메일 주소와 이름: 로그인한 계정을 화면에 표시하기 위해 이용자의 브라우저 안에서만 사용합니다.</li>
+  <li>노트 내용: 이용자 본인의 Google Drive에 저장되며, 빠른 표시와 오프라인 사용을 위해 이용자 기기의 브라우저 저장소(IndexedDB)에 사본이 보관됩니다.</li>
+</ul>
+
+<h2>2. Google 사용자 데이터 이용 범위</h2>
+<p>Daybook은 Google Drive API의 <code>drive.file</code> 권한만 요청합니다. 이 권한으로는 Daybook이 직접 만든 파일과 이용자가 선택한 폴더에만 접근할 수 있으며, 그 외 Drive 파일에는 접근하지 않습니다. 접근한 데이터는 노트 표시, 편집, 저장 기능에만 사용하고, 제3자에게 제공하거나 광고, AI 학습 등 다른 목적으로 사용하지 않습니다.</p>
+<p>Daybook의 Google API 데이터 사용은 Google API 서비스 사용자 데이터 정책(제한적 사용 요구사항 포함)을 따릅니다.</p>
+
+<h2>3. 보관 및 삭제</h2>
+<ul>
+  <li>노트 파일은 이용자의 Google Drive에 있으며, 이용자가 Drive에서 직접 삭제할 수 있습니다.</li>
+  <li>앱 설정의 로그아웃을 누르면 기기에 남은 사본과 로그인 정보가 삭제됩니다.</li>
+  <li>Google 계정 설정의 '서드파티 앱 및 서비스'에서 Daybook의 접근 권한을 언제든 해제할 수 있습니다.</li>
+</ul>
+
+<h2>4. 문의</h2>
+<p>운영자: [이름 또는 회사명] / 이메일: [문의 이메일]</p>
+</main>
+</body>
+</html>
