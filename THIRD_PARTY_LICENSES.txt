@@ -1,4 +1,4 @@
-Daybook - Third-party software notices
+Excinote - Third-party software notices
 이 앱에는 아래 오픈소스 소프트웨어가 포함되어 있습니다. 각 저작권과 라이선스 전문은 다음과 같습니다.
 
 ========================================================================
