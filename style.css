@@ -471,3 +471,17 @@ body.focus .doc { padding-top: 64px; }
   .toggle[data-open="false"] .toggle-body { display: block; }
   .prose { min-height: 0; }
 }
+
+/* ---------- 본문 폭, 백링크 영역 배치 ---------- */
+#view { display: flex; flex-direction: column; }
+.doc { width: 100%; flex: 1 0 auto; display: flex; flex-direction: column; padding-bottom: 32px; }
+.page { width: 100%; max-width: 900px; }
+.editor-host { flex: 1 0 auto; display: flex; flex-direction: column; cursor: text; margin-bottom: 40px; }
+.editor-host > .prose { flex: 1 0 auto; min-height: 30vh; }
+.backlinks { margin-top: auto; padding: 14px 16px 16px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); }
+.bl-head { display: flex; align-items: center; gap: 7px; margin-bottom: 10px; font-size: 13px; color: var(--muted); }
+.bl-title { font-weight: 600; }
+.bl-count { min-width: 20px; height: 20px; padding: 0 7px; border-radius: 99px; background: var(--hover); color: var(--text-2); font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; }
+.bl-empty { font-size: 13px; line-height: 1.65; color: var(--muted); }
+.bl-item { background: var(--panel); }
+.bl-item:last-child { margin-bottom: 0; }
