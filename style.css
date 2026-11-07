@@ -485,3 +485,23 @@ body.focus .doc { padding-top: 64px; }
 .bl-empty { font-size: 13px; line-height: 1.65; color: var(--muted); }
 .bl-item { background: var(--panel); }
 .bl-item:last-child { margin-bottom: 0; }
+
+/* ---------- 데스크톱: 하단 도구 줄과 정보 줄을 한 줄로 합쳐 글 입력 창을 넓게 ---------- */
+@media (min-width: 861px) {
+  #writebar { display: flex; align-items: center; }
+  .wtools { flex: 1 1 auto; min-width: 0; padding: 4px 8px; }
+  .tb { height: 32px; }
+  .sbar { flex: 0 0 auto; align-self: stretch; padding: 0 10px 0 12px; min-height: 0; gap: 8px; max-width: 46%; margin: 6px 0; border-left: 1px solid var(--border); }
+  .sbar-tags { flex: 0 1 auto; max-width: 360px; justify-content: flex-end; }
+  .sbar-hint { overflow: hidden; text-overflow: ellipsis; max-width: 250px; }
+  #doctools { padding: 3px 12px; }
+  .dt-btn { width: 32px; height: 32px; }
+  .doc { padding-top: 26px; }
+}
+
+/* 좁은 데스크톱 창(861 ~ 1359px)에서는 도구가 잘리지 않도록 두 줄로 유지하되 얇게 */
+@media (min-width: 861px) and (max-width: 1359px) {
+  #writebar { display: block; }
+  .sbar { max-width: none; margin: 0; border-left: 0; align-self: auto; padding: 0 12px 4px; min-height: 28px; }
+  .sbar-tags { flex: 1; max-width: none; justify-content: flex-start; }
+}
