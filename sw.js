@@ -1,6 +1,6 @@
 ﻿// 앱 화면 오프라인 캐시 (노트 데이터는 IndexedDB에 별도 보관)
 // 네트워크 우선: 새 버전을 배포하면 다음 접속부터 바로 반영되고, 오프라인일 때만 캐시 사용
-const V = 'excinote-v21';
+const V = 'excinote-v22';
 const SHELL = ['./', './index.html', './app.js', './style.css', './config.js', './manifest.webmanifest', './icon.svg', './icon-32.png', './icon-180.png', './icon-192.png', './icon-512.png', './icon-maskable-512.png', './legal.css'];
 
 self.addEventListener('install', (e) => {
