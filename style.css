@@ -581,3 +581,7 @@ body.focus .dpanel { display: none; }
   .page.wide .row-time { display: block; }
   .page-head { flex-wrap: wrap; }
 }
+.note-head .nh-b { text-align: left; color: inherit; font: inherit; padding: 0; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.note-head .nh-b:nth-child(n+3) { text-align: right; }
+.note-head .nh-b:hover, .note-head .nh-b.on { color: var(--text); }
+.nh-arrow { font-size: 10px; }
