@@ -505,3 +505,11 @@ body.focus .doc { padding-top: 64px; }
   .sbar { max-width: none; margin: 0; border-left: 0; align-self: auto; padding: 0 12px 4px; min-height: 28px; }
   .sbar-tags { flex: 1; max-width: none; justify-content: flex-start; }
 }
+
+.sc-help .pop-lbl { margin: 14px 0 6px; }
+.sc-grid { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; align-items: center; font-size: 13px; }
+.sc-name { color: var(--text); }
+.sc-keys { font: 12px/1.4 ui-monospace, Consolas, monospace; background: var(--hover, rgba(127,127,127,.15)); border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; text-align: right; }
+.sc-note { margin-top: 16px; font-size: 12px; color: var(--muted, #8a8f98); }
+.sc-keys { justify-self: end; }
+.sc-help .sc-note { color: var(--muted); }
