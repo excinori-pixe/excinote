@@ -513,3 +513,44 @@ body.focus .doc { padding-top: 64px; }
 .sc-note { margin-top: 16px; font-size: 12px; color: var(--muted, #8a8f98); }
 .sc-keys { justify-self: end; }
 .sc-help .sc-note { color: var(--muted); }
+
+/* ---------- 데일리 노트: 리플렉트 스타일 (가운데 글, 오른쪽 달력/노트 작업) ---------- */
+.daily-wrap { display: flex; flex: 1 0 auto; width: 100%; align-items: stretch; }
+.daily-wrap > .doc { flex: 1 1 auto; min-width: 0; width: auto; max-width: var(--measure, 1040px); margin: 0 auto; }
+.daily-title { border-left: 3px solid var(--text); padding-left: 12px; margin: 4px 0 14px -15px; font-size: 26px; }
+.dpanel { flex: 0 0 272px; position: sticky; top: 0; align-self: flex-start; max-height: 100%; overflow-y: auto; padding: 22px 18px 28px; }
+.cal-head { display: flex; align-items: center; gap: 4px; margin-bottom: 10px; }
+.cal-title { font-weight: 650; font-size: 14.5px; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
+.cal-w { font-size: 11.5px; font-weight: 600; color: var(--muted); padding: 4px 0 6px; }
+.cal-day { position: relative; height: 32px; border-radius: 8px; font-size: 13px; color: var(--text-2); }
+.cal-day:hover { background: var(--hover); }
+.cal-day.out { color: var(--muted); opacity: .45; }
+.cal-day.today { box-shadow: inset 0 0 0 1px var(--accent); }
+.cal-day.sel { background: var(--text); color: var(--bg); font-weight: 700; opacity: 1; }
+.cal-day.has::after { content: ''; position: absolute; left: 50%; bottom: 3px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--accent); }
+.cal-day.sel.has::after { background: var(--bg); }
+.pa-label { margin: 22px 0 6px 8px; font-size: 12px; font-weight: 600; color: var(--muted); }
+.pa-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 7px 8px; border-radius: 8px; font-size: 13.5px; color: var(--text-2); text-align: left; }
+.pa-btn svg { width: 16px; height: 16px; flex: none; color: var(--muted); }
+.pa-btn:hover:not(:disabled) { background: var(--hover); color: var(--text); }
+.pa-btn:disabled { opacity: .4; cursor: default; }
+.pa-btn.on { color: var(--accent-text); }
+.pa-btn.danger:hover { background: color-mix(in srgb, var(--err) 16%, transparent); color: var(--err); }
+.dpanel .backlinks { margin: 14px 0 0; padding: 10px 0 0; border: 0; border-top: 1px solid var(--border); border-radius: 0; background: none; }
+.bl-toggle .bl-count { margin-left: auto; }
+.dpanel .bl-item { margin-top: 6px; }
+.feed { margin-top: 36px; border-top: 1px solid var(--border); }
+.feed-day { display: block; width: 100%; text-align: left; padding: 22px 0 6px; border-radius: 8px; }
+.feed-date { margin: 0 0 8px; font-size: 19px; font-weight: 700; color: var(--text-2); }
+.feed-line { font-size: 14.5px; line-height: 1.7; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.feed-day:hover .feed-date { color: var(--text); }
+body.focus .dpanel { display: none; }
+@media (max-width: 1099px) {
+  .daily-wrap { flex-direction: column; }
+  .dpanel { position: static; flex: none; border-left: 0; border-top: 1px solid var(--border); }
+}
+@media (max-width: 860px) { .daily-title { margin-left: 0; } }
+
+.daily-wrap .editor-host > .prose { min-height: 22vh; }
+.daily-wrap .editor-host { margin-bottom: 8px; }
