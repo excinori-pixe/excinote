@@ -554,3 +554,30 @@ body.focus .dpanel { display: none; }
 
 .daily-wrap .editor-host > .prose { min-height: 22vh; }
 .daily-wrap .editor-host { margin-bottom: 8px; }
+
+/* ---------- 전체 노트 표 (Reflect 스타일) ---------- */
+.page.wide { max-width: 1240px; }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 9px; overflow: hidden; background: var(--panel); }
+.seg-b { padding: 6px 14px; font-size: 13.5px; font-weight: 500; color: var(--text-2); border-left: 1px solid var(--border); }
+.seg-b:first-child { border-left: 0; }
+.seg-b:hover { background: var(--hover); }
+.seg-b.on { background: var(--accent-soft); color: var(--accent-text); font-weight: 700; }
+.page.wide .note-list { margin-top: 18px; }
+.note-head, .note-open { display: grid; grid-template-columns: minmax(120px, 1.1fr) minmax(0, 3fr) minmax(0, 1.2fr) 96px; gap: 20px; align-items: center; }
+.note-head { padding: 8px 52px 8px 12px; color: var(--muted); font-size: 13px; border-bottom: 1px solid var(--border); }
+.note-head span:nth-child(n+3) { text-align: right; }
+.page.wide .note-row { border-radius: 0; }
+.page.wide .note-open { align-items: center; padding: 14px 12px; }
+.page.wide .row-title { font-weight: 600; min-width: 0; }
+.page.wide .rt-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.page.wide .row-snip { color: var(--accent-text); opacity: .85; }
+.row-tags { color: var(--muted); font-size: 13px; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.page.wide .row-time { text-align: right; padding-top: 0; font-size: 13px; }
+@media (max-width: 860px) {
+  .note-head { display: none; }
+  .note-open { grid-template-columns: 1fr auto; gap: 4px 12px; }
+  .page.wide .row-snip { grid-column: 1 / -1; grid-row: 2; }
+  .row-tags { display: none; }
+  .page.wide .row-time { display: block; }
+  .page-head { flex-wrap: wrap; }
+}
