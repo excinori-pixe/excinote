@@ -604,3 +604,7 @@ body.focus .dpanel { display: none; }
 .um-link { flex: none; font-size: 12.5px; padding: 5px 10px; }
 .row-bl { text-align: right; font-size: 13px; font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
 .row-bl.zero { color: var(--muted); font-weight: 400; opacity: .6; }
+
+/* 자동 링크 제안 */
+.autolink-hit { border-bottom: 1.5px dashed var(--accent, #a68cff); }
+.autolink-hint { display:inline-block; margin-left:6px; padding:0 7px; border-radius:6px; font-size:11px; line-height:18px; vertical-align:middle; background:rgba(166,140,255,.18); color:var(--accent, #a68cff); border:1px solid rgba(166,140,255,.4); cursor:pointer; user-select:none; white-space:nowrap; }
