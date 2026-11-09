@@ -655,3 +655,10 @@ body.map-on #view { overflow: hidden; }
   .map-legend { top: 10px; bottom: auto; }
   .map-card:not([hidden]) ~ .map-zoom { display: none; }
 }
+/* 링크 클릭 시 나오는 작은 안내 카드 */
+.link-pop { position: fixed; z-index: 1000; max-width: 360px; min-width: 180px; padding: 10px 12px; background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow); font-size: 13px; }
+.link-pop-name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.link-pop-url { margin: 2px 0 8px; opacity: .6; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.link-pop-go { width: 100%; padding: 6px 10px; border: 0; border-radius: 7px; background: var(--fill); color: #fff; font: inherit; cursor: pointer; }
+.link-pop-go:hover { filter: brightness(1.1); }
+.link-pop-go:disabled { opacity: .5; cursor: default; }
