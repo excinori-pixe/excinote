@@ -667,3 +667,8 @@ body.map-on #view { overflow: hidden; }
 .link-pop-go { width: 100%; padding: 6px 10px; border: 0; border-radius: 7px; background: var(--fill); color: #fff; font: inherit; cursor: pointer; }
 .link-pop-go:hover { filter: brightness(1.1); }
 .link-pop-go:disabled { opacity: .5; cursor: default; }
+
+/* ---------- 이미지 ---------- */
+.prose img { display: block; max-width: 100%; height: auto; margin: 12px 0; border-radius: 10px; border: 1px solid var(--border); }
+.prose img.ProseMirror-selectednode { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media print { .prose img { break-inside: avoid; } }
