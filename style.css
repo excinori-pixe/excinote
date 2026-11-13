@@ -687,3 +687,26 @@ body.map-on #view { overflow: hidden; }
 .prose img { display: block; max-width: 100%; height: auto; margin: 12px 0; border-radius: 10px; border: 1px solid var(--border); }
 .prose img.ProseMirror-selectednode { outline: 2px solid var(--accent); outline-offset: 2px; }
 @media print { .prose img { break-inside: avoid; } }
+
+/* 그림 크기 조절 */
+.prose .img-wrap { position: relative; display: block; width: fit-content; max-width: 100%; margin: 12px 0; line-height: 0; }
+.prose .img-wrap img { margin: 0; max-width: 100%; }
+.img-handle { position: absolute; right: 6px; bottom: 6px; width: 18px; height: 18px; border-radius: 5px; background: var(--accent); border: 2px solid #fff; cursor: nwse-resize; opacity: 0; transition: opacity .12s; touch-action: none; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+.img-wrap:hover .img-handle, .img-wrap.ProseMirror-selectednode .img-handle, .img-wrap.resizing .img-handle { opacity: 1; }
+@media (hover: none) { .img-handle { opacity: .85; width: 24px; height: 24px; } }
+.prose .img-wrap.ProseMirror-selectednode img { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* 표 */
+.prose .tableWrapper { overflow-x: auto; margin: 12px 0; }
+.prose table { border-collapse: collapse; width: 100%; table-layout: fixed; margin: 12px 0; }
+.prose .tableWrapper table { margin: 0; }
+.prose th, .prose td { border: 1px solid var(--border); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 60px; position: relative; word-break: break-word; }
+.prose th, .prose tr:first-child td { background: var(--panel); font-weight: 600; }
+.prose td p, .prose th p { margin: 0; }
+.prose .selectedCell::after { content: ''; position: absolute; inset: 0; background: color-mix(in srgb, var(--accent) 22%, transparent); pointer-events: none; }
+.tbl-bar { position: fixed; z-index: 62; display: flex; flex-wrap: wrap; gap: 2px; padding: 4px; background: var(--panel); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow); max-width: calc(100vw - 16px); }
+.tbl-bar[hidden] { display: none; }
+.tbl-bar button { padding: 5px 9px; border-radius: 7px; font-size: 12.5px; color: var(--text); white-space: nowrap; }
+.tbl-bar button:hover { background: var(--hover, rgba(127,127,127,.18)); }
+.tbl-bar button.danger { color: #e5484d; }
+@media print { .tbl-bar { display: none !important; } .img-handle { display: none; } }
