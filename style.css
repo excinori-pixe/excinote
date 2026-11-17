@@ -827,3 +827,4 @@ body.map-on #view { overflow: hidden; }
   .wk-info { float: none; width: 100%; margin: 0 0 16px; }
   .wk-title { font-size: 26px; }
 }
+.wiki-card-sub mark { background: var(--accent-soft, rgba(124,92,255,.25)); color: inherit; border-radius: 3px; padding: 0 1px; }
