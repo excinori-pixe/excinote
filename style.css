@@ -301,6 +301,8 @@ kbd { font-family: inherit; font-size: 11px; color: var(--muted); border: 1px so
 .toast { background: #2b2b33; border: 1px solid #3a3a44; color: #fff; padding: 10px 16px; border-radius: 10px; font-size: 14px; box-shadow: var(--shadow); transition: opacity .3s, transform .3s; }
 .toast.warn { background: #6b4a00; }
 .toast.error { background: #a32025; }
+.toast { display: flex; align-items: center; gap: 12px; }
+.toast-act { flex: none; }
 .toast.out { opacity: 0; transform: translateY(8px); }
 
 /* ---------- 모바일 ---------- */
