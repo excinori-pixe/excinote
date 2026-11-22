@@ -863,3 +863,16 @@ body.map-on #view { overflow: hidden; }
   .wk-title { font-size: 26px; }
 }
 .wiki-card-sub mark { background: var(--accent-soft, rgba(124,92,255,.25)); color: inherit; border-radius: 3px; padding: 0 1px; }
+
+/* v1.47 지난 할 일 가져오기 막대 */
+.carry-bar { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; padding: 8px 10px 8px 12px; border: 1px solid var(--border); border-radius: 10px; background: color-mix(in srgb, var(--accent) 8%, transparent); font-size: 13.5px; color: var(--muted); }
+.carry-bar .carry-ic { display: inline-flex; color: var(--accent); }
+.carry-bar .carry-ic svg { width: 16px; height: 16px; }
+.carry-bar .carry-tx { flex: 1 1 auto; min-width: 0; }
+.carry-bar .icon-btn { width: 26px; height: 26px; }
+@media (max-width: 600px) { .carry-bar { flex-wrap: wrap; } }
+
+/* v1.47 모바일: 전체 노트 필터가 화면을 넘지 않게, 좁은 화면 달력 패널은 가로 전체 */
+@media (max-width: 860px) { .seg { max-width: 100%; overflow-x: auto; scrollbar-width: none; } .seg-b { flex: 0 0 auto; padding: 6px 11px; } }
+@media (max-width: 1099px) { .dpanel { align-self: stretch; width: auto; } }
+::highlight(ex-hit) { background-color: rgba(255, 214, 0, 0.45); color: inherit; }
