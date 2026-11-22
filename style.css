@@ -95,6 +95,15 @@ kbd { font-family: inherit; font-size: 11px; color: var(--muted); border: 1px so
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .side-link:hover { background: var(--hover); }
+.side-row { position: relative; display: flex; }
+.side-row .side-link { flex: 1; min-width: 0; padding-right: 30px; }
+.side-hide { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; display: none; align-items: center; justify-content: center; border-radius: 6px; color: var(--muted); }
+.side-hide svg { width: 15px; height: 15px; }
+.side-row:hover .side-hide, .side-hide:focus-visible { display: flex; }
+.side-hide:hover { background: var(--hover); color: var(--text); }
+@media (pointer: coarse) { .side-hide { display: none !important; } }
+.hid-chip { margin-left: 8px; padding: 1px 7px; border-radius: 999px; font-size: 11px; color: var(--muted); border: 1px solid var(--border, rgba(255,255,255,.15)); flex: none; }
+.hid-chip:hover { color: var(--text); }
 .side-link.active { background: var(--hover); color: var(--text); font-weight: 600; }
 .side-foot { margin-top: auto; padding-top: 12px; display: flex; align-items: center; gap: 6px; }
 .status { flex: 1; display: grid; grid-template-columns: 10px 1fr; column-gap: 8px; align-items: center; padding: 6px 8px; border-radius: 8px; font-size: 12.5px; cursor: pointer; min-width: 0; }
