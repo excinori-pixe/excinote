@@ -991,3 +991,51 @@ body.side-active .side-pane .sp-head { box-shadow: inset 0 -2px 0 var(--accent);
 body.focus .m-tabs { display: none !important; }
 .set-row .switch { flex: none; white-space: nowrap; }
 @media (max-width: 860px) { #doctools .nav-back, #doctools .nav-fwd, #doctools .dt-sep { display: none; } }
+
+/* ---------- v1.51 ---------- */
+.find-hit { background: color-mix(in srgb, #ffd600 38%, transparent); border-radius: 2px; }
+.find-cur { background: #ffb000; color: #111; }
+.find-bar { position: fixed; z-index: 45; width: min(440px, calc(100vw - 24px)); background: var(--panel); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); padding: 6px; display: flex; flex-direction: column; gap: 6px; }
+.find-bar[hidden], .find-rep[hidden] { display: none; }
+.find-row { display: flex; align-items: center; gap: 4px; }
+.find-row input { flex: 1; min-width: 0; padding: 6px 9px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text); font: inherit; font-size: 14px; outline: none; }
+.find-row input:focus { border-color: var(--accent); }
+.find-count { font-size: 12px; color: var(--muted); min-width: 44px; text-align: right; }
+.find-count.none { color: #e5484d; }
+.find-case { padding: 3px 7px; border-radius: 6px; font-size: 12px; font-weight: 700; color: var(--muted); border: 1px solid transparent; }
+.find-case.on { color: var(--accent); border-color: var(--accent); }
+.find-bar .icon-btn { width: 28px; height: 28px; }
+.toc-h { font-size: 12px; font-weight: 700; color: var(--muted); margin: 0 0 6px 8px; letter-spacing: .02em; }
+.toc-list { display: flex; flex-direction: column; gap: 1px; }
+.toc-i { text-align: left; padding: 4px 8px; border-radius: 6px; font-size: 13px; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.toc-i:hover { background: var(--hover); }
+.toc-i.on { color: var(--accent-text, var(--accent)); background: var(--accent-soft); font-weight: 600; }
+.toc-i.tg { color: var(--muted); }
+.toc { margin-top: 16px; }
+.toc-float { position: fixed; top: 150px; right: 24px; width: 210px; max-height: calc(100vh - 260px); overflow-y: auto; margin: 0; padding: 4px 0; }
+.pop .toc-list { max-height: 60vh; overflow-y: auto; min-width: 220px; }
+.pop-empty { padding: 10px 12px; color: var(--muted); font-size: 13px; }
+@media (max-width: 1399px) { .toc-float { display: none; } }
+@media print { .toc, .find-bar { display: none !important; } }
+.extract-box { display: flex; flex-direction: column; gap: 10px; }
+.extract-pre { margin: 0; max-height: 200px; overflow: auto; white-space: pre-wrap; word-break: break-word; font: inherit; font-size: 13px; color: var(--muted); padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); }
+.li-fold { position: absolute; left: -22px; top: 0.25em; width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; border-radius: 4px; color: var(--muted); opacity: 0; transition: opacity .12s, transform .12s; font-size: 0; }
+.li-fold::before { content: ''; border: 4px solid transparent; border-top: 5px solid currentColor; margin-top: 4px; }
+.li-fold.on { opacity: 1; transform: rotate(-90deg); }
+li:hover > .li-fold, .li-fold:focus-visible { opacity: 1; }
+.li-fold:hover { background: var(--hover); color: var(--text); }
+.prose li { position: relative; }
+.li-folded ul, .li-folded ol { display: none; }
+.li-more { color: var(--muted); font-size: 12px; margin-left: 4px; }
+@media (hover: none) { .li-fold { opacity: .55; } }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 12px; }
+.tag-cloud[hidden] { display: none; }
+.tag-chip.tc { display: inline-flex; align-items: center; gap: 6px; }
+.tag-chip.tc.on { background: var(--accent-soft); color: var(--accent-text, var(--accent)); border-color: var(--accent); }
+.tc-n { font-size: 11px; color: var(--muted); }
+.tc-more { font-size: 12.5px; color: var(--muted); padding: 2px 8px; }
+mark.hl { background: color-mix(in srgb, #ffd600 40%, transparent); color: inherit; border-radius: 2px; padding: 0 1px; }
+.li-fold { left: -27px; background: var(--bg); }
+.prose ul[data-type="taskList"] li .li-fold { left: -24px; }
+body.focus .toc { display: none; }
+li:hover > div > .li-fold { opacity: 1; }
