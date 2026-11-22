@@ -948,3 +948,46 @@ body.side-active .side-pane .sp-head { box-shadow: inset 0 -2px 0 var(--accent);
 .daily-title { word-break: keep-all; }
 .hid-mark { margin-left: 8px; padding: 1px 7px; border-radius: 999px; font-size: 11px; color: var(--muted); border: 1px solid var(--border, rgba(255,255,255,.15)); flex: none; }
 .note-row > .hid-chip { flex: none; margin: 0 2px 0 0; padding: 3px 9px; font-size: 12px; }
+.sp-resize { touch-action: none; }
+/* 1360~1680px 한 줄 도구: 태그 안내 문구가 도구 끝 버튼을 밀어내지 않게 숨김(태그가 있으면 칩은 그대로) */
+@media (min-width: 1360px) and (max-width: 1680px) { .sbar-hint { display: none; } }
+
+/* ---------- v1.50 ---------- */
+.tk-add { display: flex; align-items: center; gap: 8px; margin: 4px 0 12px; padding: 0 10px; border: 1px solid var(--border); border-radius: 10px; background: var(--panel); }
+.tk-add .field { border: 0; background: transparent; flex: 1; padding: 10px 0; }
+.tk-add-ic { display: inline-flex; color: var(--accent); }
+.tk-add-ic svg { width: 16px; height: 16px; }
+.tk-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.tk-bar .tk-search { flex: 1 1 180px; min-width: 0; }
+.task .tk-text { text-align: left; padding: 2px 4px; border-radius: 6px; color: inherit; flex: 1; min-width: 0; }
+.task .tk-text:hover { background: var(--hover); }
+.task { display: flex; align-items: flex-start; gap: 8px; }
+.dt-sep { width: 1px; height: 18px; background: var(--border); margin: 0 6px; }
+.hist-modal { max-width: 860px !important; width: 92vw; }
+.hist-wrap { display: grid; grid-template-columns: 220px 1fr; gap: 12px; height: min(60vh, 520px); }
+.hist-list { overflow-y: auto; display: flex; flex-direction: column; gap: 4px; }
+.hist-item { text-align: left; padding: 8px 10px; border-radius: 8px; border: 1px solid transparent; display: flex; flex-direction: column; gap: 2px; }
+.hist-item small { color: var(--muted); font-size: 12px; }
+.hist-item.on { border-color: var(--accent); background: var(--accent-soft); }
+.hist-pre { margin: 0; overflow: auto; white-space: pre-wrap; word-break: break-word; font: inherit; font-size: 13.5px; line-height: 1.65; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); }
+@media (max-width: 640px) { .hist-wrap { grid-template-columns: 1fr; grid-template-rows: 140px 1fr; } }
+.try-row { display: flex; align-items: center; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+.m-tabs { display: none; }
+@media (max-width: 860px) {
+  .m-tabs { display: flex; gap: 4px; padding: 4px 10px 6px; background: var(--side); border-bottom: 1px solid var(--border); }
+  .m-tab { flex: 1; padding: 6px 0; border-radius: 8px; font-size: 13.5px; color: var(--text-2); }
+  .m-tab.on { background: var(--accent-soft); color: var(--accent-text); font-weight: 600; }
+  /* 휴대폰에서 자주 쓰는 도구를 앞으로 */
+  .wtools [data-key="task"] { order: -9; }
+  .wtools [data-key="wikilink"] { order: -8; }
+  .wtools [data-key="bullet"] { order: -7; }
+  .wtools [data-key="indent"] { order: -6; }
+  .wtools [data-key="outdent"] { order: -5; }
+  .wtools [data-key="undo"] { order: -4; }
+  .wtools [data-key="redo"] { order: -3; }
+}
+@media print { .m-tabs { display: none !important; } }
+@media (max-width: 860px) { .wtools .tb-sep { display: none; } .wtools [data-key="redo"] { margin-right: 8px; } }
+body.focus .m-tabs { display: none !important; }
+.set-row .switch { flex: none; white-space: nowrap; }
+@media (max-width: 860px) { #doctools .nav-back, #doctools .nav-fwd, #doctools .dt-sep { display: none; } }
