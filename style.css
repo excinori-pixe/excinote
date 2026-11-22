@@ -66,7 +66,19 @@ svg { display: block; flex-shrink: 0; }
   width: 252px; flex-shrink: 0; background: var(--side); border-right: 1px solid var(--border);
   display: flex; flex-direction: column; padding: 14px 10px 10px; overflow-y: auto; gap: 2px;
 }
-.brand { display: flex; align-items: center; gap: 9px; font-weight: 700; font-size: 16px; padding: 4px 8px 12px; letter-spacing: -.01em; }
+.brand {
+  display: flex; align-items: center; gap: 9px; font-weight: 700; font-size: 16px; padding: 4px 8px; margin-bottom: 8px; letter-spacing: -.01em;
+  align-self: flex-start; background: none; border: 0; color: inherit; font-family: inherit; cursor: pointer; border-radius: 10px;
+  transition: background .2s ease;
+}
+.brand .logo { display: flex; transition: transform .22s cubic-bezier(.34, 1.56, .64, 1), filter .22s ease; }
+.brand .brand-tx { transition: color .2s ease, transform .22s ease; }
+.brand:hover .logo { transform: scale(1.14) rotate(-6deg); filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 55%, transparent)); }
+.brand:hover .brand-tx { color: var(--accent); transform: translateX(2px); }
+.brand:active .logo { transform: scale(.94); }
+.brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.brand.reloading .logo { animation: brand-spin .6s cubic-bezier(.45, 0, .2, 1) infinite; }
+@keyframes brand-spin { from { transform: rotate(0deg) scale(1.05); } to { transform: rotate(360deg) scale(1.05); } }
 .logo { color: var(--accent); }
 .search-btn {
   display: flex; align-items: center; gap: 8px; padding: 7px 10px; margin-bottom: 8px; border-radius: 9px;
