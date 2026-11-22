@@ -172,6 +172,18 @@ kbd { font-family: inherit; font-size: 11px; color: var(--muted); border: 1px so
 .prose li > p { margin: 0; }
 .prose li::marker { color: var(--muted); }
 .prose blockquote { margin: .6em 0; padding: 2px 0 2px 14px; border-left: 3px solid var(--accent); color: var(--text-2); }
+/* AI 요청 대기 표시와 요약 상자 */
+.prose .ai-pending { background: color-mix(in srgb, var(--accent) 12%, transparent); border-bottom: 1.5px dashed color-mix(in srgb, var(--accent) 70%, transparent); border-radius: 3px; }
+.prose blockquote.ai-note { border-left: 0; padding: 10px 14px; border-radius: 10px; color: var(--text); background: color-mix(in srgb, var(--accent) 9%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent); }
+.prose blockquote.ai-note > p:first-child { font-size: 12.5px; color: var(--accent); margin-bottom: 2px; }
+.prose blockquote.ai-note > p:first-child strong { font-weight: 700; }
+.ai-bubble { position: fixed; z-index: 60; display: flex; gap: 2px; padding: 3px; border-radius: 10px; background: var(--panel); border: 1px solid var(--border); box-shadow: 0 6px 22px rgba(0,0,0,.28); animation: ai-pop .14s ease-out; }
+.ai-bubble[hidden] { display: none; }
+.ai-b { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 7px; color: var(--text-2); background: none; border: 0; cursor: pointer; transition: background .15s, color .15s, transform .15s; }
+.ai-b svg { width: 17px; height: 17px; }
+.ai-b:hover { background: var(--hover); color: var(--accent); transform: scale(1.08); }
+.ai-b.cancel:hover { color: #f06a6a; }
+@keyframes ai-pop { from { opacity: 0; transform: translateY(-3px) scale(.96); } to { opacity: 1; transform: none; } }
 .prose code { background: var(--hover); border-radius: 5px; padding: 1px 5px; font-size: .88em; font-family: ui-monospace, Consolas, monospace; }
 .prose pre { background: var(--side); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; overflow-x: auto; }
 .prose pre code { background: none; padding: 0; }
